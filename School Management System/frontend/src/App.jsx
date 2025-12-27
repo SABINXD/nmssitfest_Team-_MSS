@@ -8,6 +8,7 @@ import AdminLogin from "./pages/Login/AdminLogin";
 import RoutineGenerator from "./pages/RoutineGenerator/RoutineGenerator";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import ProtectedRoute from "./components/ProtectedRoute";
+import StudentDashboard from "./pages/StudentPanel/StudentPanel";
 
 // Placeholder components for now
 const StudentPortal = () => <div className="portal-page"><h1>🎓 Student Portal</h1><p>Welcome to your student dashboard!</p></div>;
@@ -23,6 +24,7 @@ function App() {
         <Route path="/teacherlogin" element={<TeacherLogin />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/generate-timetable" element={<RoutineGenerator />} />
+        <Route path="/student" element={<StudentDashboard />} />
         
         {/* Protected Routes */}
         <Route path="/student" element={
