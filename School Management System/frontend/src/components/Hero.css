@@ -1,0 +1,104 @@
+/* Hero component styles */
+.hero {
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.hero-content {
+  margin-left: 80px;
+  color: white;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-content.show {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-content.align-right {
+  margin-left: auto;
+  margin-right: 80px;
+  text-align: right;
+}
+
+.hero-content.align-left {
+  /* keep original left margin */
+  margin-left: 80px;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start; /* default align with left text */
+}
+
+/* Align buttons with content alignment */
+.hero-content.align-right .hero-buttons {
+  justify-content: flex-end;
+}
+
+.hero-content.align-left .hero-buttons {
+  justify-content: flex-start;
+}
+
+.primary-btn {
+  background: #0b4da2;
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: white;
+  color: #0b4da2;
+  border: none;
+  padding: 12px 26px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .hero-content,
+  .hero-content.align-right,
+  .hero-content.align-left {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  /* center buttons on small screens */
+  .hero-content .hero-buttons {
+    justify-content: center !important;
+  }
+}
