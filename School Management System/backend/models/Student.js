@@ -8,7 +8,7 @@ const studentSchema = new mongoose.Schema({
   },
   age: {
     type: String,
-    required: true
+    required: false
   },
   grade: {
     type: String,
