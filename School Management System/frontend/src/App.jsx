@@ -3,13 +3,15 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login/Login";
+import TeacherLogin from "./pages/Login/TeacherLogin";
+import AdminLogin from "./pages/Login/AdminLogin";
 import RoutineGenerator from "./pages/RoutineGenerator/RoutineGenerator";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 // Placeholder components for now
 const StudentPortal = () => <div className="portal-page"><h1>🎓 Student Portal</h1><p>Welcome to your student dashboard!</p></div>;
 const TeacherPortal = () => <div className="portal-page"><h1>👨‍🏫 Teacher Portal</h1><p>Welcome to your teacher dashboard!</p></div>;
-const AdminPortal = () => <div className="portal-page"><h1>⚙️ Admin Panel</h1><p>Welcome to admin dashboard!</p></div>;
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/teacherlogin" element={<TeacherLogin />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/generate-timetable" element={<RoutineGenerator />} />
         
         {/* Protected Routes */}
@@ -35,7 +39,7 @@ function App() {
         
         <Route path="/admin" element={
           <ProtectedRoute allowedRoles={['admin']}>
-            <AdminPortal />
+            <AdminPanel />
           </ProtectedRoute>
         } />
         
