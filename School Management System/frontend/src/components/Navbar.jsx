@@ -42,7 +42,6 @@ function Navbar() {
           )}
           
           {/* Public routes */}
-          <li><NavLink to="/generate-timetable" className={({ isActive }) => (isActive ? "active" : undefined)}>📅Timetable</NavLink></li>
           <li><NavLink to="/about" className={({ isActive }) => (isActive ? "active" : undefined)}>ℹ️ About</NavLink></li>
           <li><NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : undefined)}>📞 Contact</NavLink></li>
         </ul>

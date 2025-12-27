@@ -7,14 +7,36 @@ const studentSchema = new mongoose.Schema({
     required: true
   },
   age: {
-    type: Number,
-    required: true
+    type: String,
+    required: false
   },
   grade: {
     type: String,
     required: true
   },
+  class: {
+    type: String,
+    required: false
+  },
+  rollNumber: {
+    type: String,
+    required: false
+  },
   email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  studentId: {
     type: String,
     required: true,
     unique: true
@@ -22,6 +44,10 @@ const studentSchema = new mongoose.Schema({
   enrolled: {
     type: Boolean,
     default: true
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
   }
 });
 
