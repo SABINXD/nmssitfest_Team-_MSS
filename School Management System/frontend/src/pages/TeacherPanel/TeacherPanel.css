@@ -6,7 +6,7 @@
 
 .teacher-sidebar {
   width: 280px;
-  background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 100%);
+  background: var(--gradient-animated);
   color: white;
   padding: 0;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -20,7 +20,7 @@
 
 .sidebar-header {
   padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--gradient-animated);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -65,6 +65,7 @@
 .sidebar-nav {
   padding: 20px 0;
   flex: 1;
+  background-color: var(--gradient-animated);
 }
 
 .nav-item {

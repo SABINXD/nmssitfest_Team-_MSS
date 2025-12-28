@@ -6,7 +6,7 @@
   
   .student-sidebar {
     width: 280px;
-    background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 100%);
+    background: var(--gradient-animated);
     color: white;
     padding: 0;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);

@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV 'C:\Users\hp\Documents\GitHub\NMSS-SMART\School Management System\python_site\venv'
+set -gx VIRTUAL_ENV 'D:\sms\nmssitfest_Team-_MSS\School Management System\python_site\venv'
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"Scripts $PATH
