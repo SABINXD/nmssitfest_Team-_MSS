@@ -28,14 +28,14 @@ function Contact() {
             <div className="info-card">
               <div className="info-icon">📞</div>
               <h3>Phone</h3>
-              <p>+977-XXX-XXXXXXX</p>
-              <p>Office Hours: 9:00 AM - 5:00 PM</p>
+              <p>056-493662</p>
+              <p>Office Hours: 10:00 AM - 4:00 PM</p>
             </div>
 
             <div className="info-card">
               <div className="info-icon">🕒</div>
               <h3>Office Hours</h3>
-              <p>Sunday - Friday: 9:00 AM - 5:00 PM</p>
+              <p>Sunday - Friday: 10:00 AM - 4:00 PM</p>
               <p>Saturday: Closed</p>
             </div>
           </div>

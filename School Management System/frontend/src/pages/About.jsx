@@ -13,8 +13,7 @@ import "./About.css";
           <div className="about-image-section">
             <div className="about-photos">
               <div className="image-placeholder image-placeholder--main">
-                <p>📸</p>
-                <p className="image-note">Main photo (school building / campus)</p>
+                <img src="/school%20photo.webp" alt="Narayani Model Secondary School" className="about-main-photo" />
               </div>
 
               <div className="image-grid">

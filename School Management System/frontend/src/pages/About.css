@@ -69,6 +69,14 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(224, 242, 254, 0.7));
 }
 
+.image-placeholder--main img.about-main-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
 .image-placeholder--small {
   padding: 18px 12px;
   border-radius: 12px;

@@ -4,12 +4,13 @@ const cors = require('cors');
 require('dotenv').config();  // Load environment from .env
 
 // Import routes with error handling
-let studentRoutes, studentUploadRoutes, teacherRoutes, teacherUploadRoutes;
+let studentRoutes, studentUploadRoutes, teacherRoutes, teacherUploadRoutes, libraryRoutes;
 try {
   studentRoutes = require('./routes/StudentRoutes');  // Import the student routes
   studentUploadRoutes = require('./routes/StudentUploadRoutes');  // Import the student upload routes
   teacherRoutes = require('./routes/TeacherRoutes');  // Import the teacher routes
   teacherUploadRoutes = require('./routes/TeacherUploadRoutes');  // Import the teacher upload routes
+  libraryRoutes = require('./routes/LibraryRoutes'); // Import library routes
   console.log('Routes loaded successfully');
 } catch (error) {
   console.error('Error loading routes:', error);
@@ -54,6 +55,10 @@ app.use('/api/students', studentUploadRoutes);  // Map the upload routes to /api
 // Use the teacher routes
 app.use('/api/teachers', teacherRoutes);  // Map the routes to /api/teachers
 app.use('/api/teachers', teacherUploadRoutes);  // Map the upload routes to /api/teachers
+
+// Library routes (books, borrowing)
+app.use('/api/library', libraryRoutes);  // Map library routes to /api/library
+console.log('Library routes mounted at /api/library');
 
 // Sample route (this one can be your health check route or welcome message)
 app.get('/', (req, res) => {

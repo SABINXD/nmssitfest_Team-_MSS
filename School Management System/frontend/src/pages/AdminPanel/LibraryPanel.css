@@ -1,0 +1,80 @@
+:root {
+  --card-bg: var(--bg-primary);
+}
+
+.library-panel .section-header h2 {
+  color: var(--primary-teal);
+}
+
+.library-main {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.library-left {
+  flex: 0 0 360px;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.book-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+.book-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.library-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.books-table, .records-table {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+.books-table table, .records-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.books-table th, .books-table td, .records-table th, .records-table td {
+  padding: 8px 10px;
+  border-top: 1px solid #f3f4f6;
+  text-align: left;
+}
+
+.small-btn {
+  background: linear-gradient(135deg, var(--soft-teal), var(--soft-yellow));
+  color: var(--text-primary);
+  border: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.small-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(99,102,241,0.12); }
+
+.process-btn { /* keep same style as AdminPanel */ }
+
+@media (max-width: 900px) {
+  .library-main { flex-direction: column; }
+  .library-left { width: 100%; }
+}

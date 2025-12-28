@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import RoutineGenerator from '../RoutineGenerator/RoutineGenerator';
+import LibraryPanel from './LibraryPanel';
 import './AdminPanel.css';
 
 const AdminPanel = () => {
@@ -335,6 +336,12 @@ const AdminPanel = () => {
           onClick={() => setActiveTab('routine')}
         >
           📅 Routine Generator
+        </button>
+        <button
+          className={`admin-tab ${activeTab === 'library' ? 'active' : ''}`}
+          onClick={() => setActiveTab('library')}
+        >
+          📚 Library
         </button>
       </div>
 
@@ -715,6 +722,12 @@ const AdminPanel = () => {
         {activeTab === 'routine' && (
           <div className="routine-section">
             <RoutineGenerator />
+          </div>
+        )}
+
+        {activeTab === 'library' && (
+          <div className="library-section">
+            <LibraryPanel />
           </div>
         )}
       </div>
