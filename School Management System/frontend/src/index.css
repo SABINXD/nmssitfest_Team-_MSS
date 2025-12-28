@@ -1,8 +1,53 @@
+:root {
+  --primary-cyan: #0EA5E9;
+  --primary-teal: #6366F1;
+  --primary-yellow: #F59E0B;
+  --primary-orange: #F97316;
+
+  --soft-cyan: #E0F2FE;
+  --soft-teal: #EEF2FF;
+  --soft-yellow: #FFFBEB;
+  --soft-orange: #FFF7ED;
+
+  --gradient-animated: linear-gradient(
+    135deg,
+    var(--soft-cyan) 0%,
+    var(--soft-teal) 35%,
+    var(--soft-yellow) 70%,
+    var(--soft-orange) 100%
+  );
+  --gradient-blend-1: linear-gradient(135deg, var(--soft-cyan) 0%, var(--soft-teal) 55%, var(--soft-yellow) 100%);
+  --gradient-blend-2: linear-gradient(135deg, var(--soft-teal) 0%, var(--soft-yellow) 55%, var(--soft-orange) 100%);
+  --gradient-blend-3: linear-gradient(135deg, var(--soft-cyan) 0%, var(--soft-orange) 100%);
+  --gradient-warm: linear-gradient(135deg, var(--soft-yellow) 0%, var(--soft-orange) 100%);
+  --gradient-cool: linear-gradient(135deg, var(--soft-cyan) 0%, var(--soft-teal) 100%);
+
+  --page-bg: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(224, 242, 254, 0.55) 48%, rgba(238, 242, 255, 0.55) 100%);
+  
+  --text-primary: #000;
+  --text-secondary: #000;
+  --text-light: #000;
+  --text-white: #000;
+  
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body, body * {
+  color: var(--text-primary) !important;
 }
 
 /* Navbar styles moved to components/Navbar.css */

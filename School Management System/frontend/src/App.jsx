@@ -9,10 +9,10 @@ import RoutineGenerator from "./pages/RoutineGenerator/RoutineGenerator";
 import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import ProtectedRoute from "./components/ProtectedRoute";
 import StudentDashboard from "./pages/StudentPanel/StudentPanel";
-
-// Placeholder components for now
-const StudentPortal = () => <div className="portal-page"><h1>🎓 Student Portal</h1><p>Welcome to your student dashboard!</p></div>;
-const TeacherPortal = () => <div className="portal-page"><h1>👨‍🏫 Teacher Portal</h1><p>Welcome to your teacher dashboard!</p></div>;
+import TeacherPanel from "./pages/TeacherPanel/TeacherPanel";
+import About from "./pages/About";
+import FeaturesPage from "./pages/Features";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -24,18 +24,17 @@ function App() {
         <Route path="/teacherlogin" element={<TeacherLogin />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/generate-timetable" element={<RoutineGenerator />} />
-        <Route path="/student" element={<StudentDashboard />} />
         
         {/* Protected Routes */}
         <Route path="/student" element={
           <ProtectedRoute allowedRoles={['student']}>
-            <StudentPortal />
+            <StudentDashboard />
           </ProtectedRoute>
         } />
         
         <Route path="/teacher" element={
           <ProtectedRoute allowedRoles={['teacher']}>
-            <TeacherPortal />
+            <TeacherPanel />
           </ProtectedRoute>
         } />
         
@@ -46,9 +45,9 @@ function App() {
         } />
         
         {/* Other routes */}
-        <Route path="/about" element={<h1>About Page</h1>} />
-        <Route path="/contact" element={<h1>Contact Page</h1>} />
-        <Route path="/features" element={<h1>Features Page</h1>} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/features" element={<FeaturesPage />} />
       </Routes>
     </AuthProvider>
   );

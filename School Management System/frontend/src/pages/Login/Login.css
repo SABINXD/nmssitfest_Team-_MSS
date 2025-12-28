@@ -1,12 +1,12 @@
 :root {
-  --student-primary: #0b4da2;
-  --student-secondary: #1e6fd9;
-  --teacher-primary: #0b4da2;
-  --teacher-secondary: #1e6fd9;
-  --admin-primary: #0b4da2;
-  --admin-secondary: #1e6fd9;
+  --student-primary: #0EA5E9;
+  --student-secondary: #6366F1;
+  --teacher-primary: #0EA5E9;
+  --teacher-secondary: #6366F1;
+  --admin-primary: #0EA5E9;
+  --admin-secondary: #6366F1;
   --danger: #ef4444;
-  --warning: #f59e0b;
+  --warning: #F59E0B;
   --success: #10b981;
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0b4da2 0%, #1e6fd9 100%);
+  background: linear-gradient(135deg, #E0F2FE 0%, #EEF2FF 35%, #FFFBEB 70%, #FFF7ED 100%);
   padding: 2rem;
 }
 
@@ -61,6 +61,41 @@
   padding: 2.5rem 2rem;
   text-align: center;
   color: white;
+  position: relative;
+}
+
+.student-header {
+  background: linear-gradient(135deg, #0EA5E9, #6366F1);
+}
+
+.teacher-header {
+  background: linear-gradient(135deg, #0EA5E9, #6366F1);
+}
+
+/* Portal Icon Indicator */
+.portal-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.student-icon {
+  font-size: 5rem;
+}
+
+.teacher-icon {
+  font-size: 5rem;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .logo-section {
@@ -89,6 +124,7 @@
   font-size: 1rem;
   opacity: 0.9;
   margin: 0.5rem 0 0;
+  font-weight: 500;
 }
 
 /* Tabs */
@@ -171,7 +207,7 @@
 }
 
 .admin-header .admin-warning {
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   border: 1px solid var(--admin-primary);
   color: var(--admin-primary);
   padding: 0.75rem;
@@ -221,7 +257,7 @@
   outline: none;
   border-color: var(--student-primary);
   background: white;
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
 }
 
 /* Form Options */
@@ -258,7 +294,7 @@
 }
 
 .forgot-password:hover {
-  background: rgba(79, 70, 229, 0.1);
+  background: rgba(14, 165, 233, 0.1);
 }
 
 /* Login Buttons */
@@ -346,13 +382,13 @@
 }
 
 .admin-demo-btn {
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   border-color: var(--admin-primary);
   color: var(--admin-primary);
 }
 
 .admin-demo-btn:hover {
-  background: rgba(245, 158, 11, 0.2);
+  background: rgba(14, 165, 233, 0.2);
 }
 
 /* Error Message */

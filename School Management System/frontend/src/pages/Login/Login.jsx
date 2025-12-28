@@ -7,7 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
   const [formData, setFormData] = useState({
-    student: { email: '', password: '' }
+    student: { usernameOrEmail: '', password: '' }
   });
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -34,16 +34,11 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
-    const { email, password } = formData.student;
+    const { usernameOrEmail, password } = formData.student;
     
     // Basic validation
-    if (!email || !password) {
+    if (!usernameOrEmail || !password) {
       setError('Please fill in all fields');
-      return;
-    }
-    
-    if (!email.includes('@')) {
-      setError('Please enter a valid email address');
       return;
     }
     
@@ -51,17 +46,48 @@ const Login = () => {
     setError('');
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Determine if input is email or username
+      const isEmail = usernameOrEmail.includes('@');
+      const requestBody = {
+        password,
+        ...(isEmail ? { email: usernameOrEmail } : { username: usernameOrEmail })
+      };
+
+      // Call backend API
+      const res = await fetch('http://localhost:5000/api/students/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody)
+      });
       
-      // Create user object
+      // Handle non-JSON responses (network errors, etc.)
+      let data;
+      try {
+        data = await res.json();
+      } catch (parseError) {
+        if (!res.ok) {
+          throw new Error(`Server error (${res.status}): ${res.statusText}`);
+        }
+        throw new Error('Invalid response from server');
+      }
+      
+      if (!res.ok) {
+        throw new Error(data.error || data.message || 'Login failed');
+      }
+      
+      // Create user object from backend response
       const userData = {
-        id: Date.now().toString(),
-        email: email,
-        name: email.split('@')[0].replace('.', ' '),
+        id: data.student._id || data.student.studentId,
+        email: data.student.email,
+        username: data.student.username,
+        name: data.student.name,
         role: 'student',
         avatar: '👨‍🎓',
-        permissions: getPermissionsByRole('student')
+        permissions: getPermissionsByRole('student'),
+        studentId: data.student.studentId,
+        grade: data.student.grade,
+        class: data.student.class,
+        rollNumber: data.student.rollNumber
       };
       
       // Login using auth context
@@ -71,8 +97,46 @@ const Login = () => {
       navigate('/student');
       
     } catch (err) {
-      console.log(err);
-      setError('Login failed. Please check your credentials.');
+      console.error('Login error:', err);
+      // Handle network errors (backend server not running, etc.)
+      if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+        setError('Cannot connect to server. Please make sure the backend server is running.');
+      } else {
+        setError(err.message || 'Login failed. Please check your credentials.');
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDemoLogin = async () => {
+    setIsLoading(true);
+    setError('');
+    
+    try {
+      // Demo login - works without backend
+      await new Promise(resolve => setTimeout(resolve, 500));
+      
+      const userData = {
+        id: 'demo-student-' + Date.now(),
+        email: 'demo.student@school.edu',
+        username: 'demostudent',
+        name: 'Demo Student',
+        role: 'student',
+        avatar: '👨‍🎓',
+        permissions: getPermissionsByRole('student'),
+        studentId: 'DEMO001',
+        grade: '10',
+        class: 'A',
+        isDemo: true
+      };
+      
+      login(userData);
+      navigate('/student');
+      
+    } catch (err) {
+      console.error('Demo login error:', err);
+      setError('Demo login failed. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -82,26 +146,18 @@ const Login = () => {
     alert('Password reset link will be sent to your student email.');
   };
 
-  const handleQuickLogin = (demoEmail) => {
-    setFormData(prev => ({
-      ...prev,
-      student: {
-        email: demoEmail,
-        password: 'demo123'
-      }
-    }));
-  };
 
   return (
     <div className="login-container">
       <div className="login-card">
         {/* Header */}
-        <div className="login-header">
+        <div className="login-header student-header">
+          <div className="portal-icon student-icon">🎓</div>
           <div className="logo-section">
             <img src="/logo.png" alt="NMSS SMART Logo" className="login-logo" />
             <h1>NMSS SMART</h1>
           </div>
-          <p className="login-subtitle">Access your school management portal</p>
+          <p className="login-subtitle">Student Portal Access</p>
         </div>
 
         {/* Login Form */}
@@ -114,16 +170,16 @@ const Login = () => {
               </div>
               
               <div className="form-group">
-                <label htmlFor="student-email">
-                  <span className="label-icon">📧</span>
-                  Student Email
+                <label htmlFor="student-username-email">
+                  <span className="label-icon">👤</span>
+                  Username or Email
                 </label>
                 <input
-                  id="student-email"
-                  type="email"
-                  placeholder="student@school.edu"
-                  value={formData.student.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  id="student-username-email"
+                  type="text"
+                  placeholder="username or student@school.edu"
+                  value={formData.student.usernameOrEmail}
+                  onChange={(e) => handleInputChange('usernameOrEmail', e.target.value)}
                 />
               </div>
               
@@ -170,9 +226,10 @@ const Login = () => {
               
               <button
                 className="demo-btn"
-                onClick={() => handleQuickLogin('demo.student@school.edu')}
+                onClick={handleDemoLogin}
+                disabled={isLoading}
               >
-                Try Demo Student Account
+                🔓 Login as Demo Student
               </button>
             </div>
 

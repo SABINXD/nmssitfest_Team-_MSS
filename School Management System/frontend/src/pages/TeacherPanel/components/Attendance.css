@@ -1,0 +1,179 @@
+.attendance {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.attendance-header {
+  margin-bottom: 30px;
+}
+
+.attendance-header h1 {
+  font-size: 32px;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.attendance-header p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.attendance-controls {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.control-group select,
+.control-group input[type="date"] {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.control-group select:focus,
+.control-group input[type="date"]:focus {
+  outline: none;
+  border-color: #0EA5E9;
+}
+
+.attendance-table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attendance-table thead {
+  background: linear-gradient(135deg, #0EA5E9, #6366F1);
+  color: white;
+}
+
+.attendance-table th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.attendance-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background 0.2s ease;
+}
+
+.attendance-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.attendance-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.attendance-table td {
+  padding: 16px;
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-badge.present {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.absent {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.status-btn {
+  padding: 8px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.status-btn.present {
+  color: #065f46;
+}
+
+.status-btn.present:hover,
+.status-btn.present.active {
+  background: #E0F2FE;
+  border-color: #0EA5E9;
+}
+
+.status-btn.absent {
+  color: #991b1b;
+}
+
+.status-btn.absent:hover,
+.status-btn.absent.active {
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+
+.attendance-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.save-attendance-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #0EA5E9, #6366F1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.save-attendance-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+

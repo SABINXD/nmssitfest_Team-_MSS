@@ -12,7 +12,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   border-radius: 8px;
 }
 
@@ -22,28 +22,31 @@
 
 .user-name {
   font-weight: 500;
-  color: black;
+  color: #333;
 }
 
 .user-role {
   font-size: 0.8rem;
   opacity: 0.8;
-  color: black;
+  color: var(--primary-teal);
 }
 
 .logout-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: black;
+  background: rgba(14, 165, 233, 0.15);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  color: var(--primary-cyan);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .logout-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--gradient-cool);
+  color: white;
+  border-color: var(--primary-teal);
 }
 
 /* Loading Styles */
@@ -59,8 +62,8 @@
 .loading-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #4f46e5;
+  border: 3px solid var(--primary-yellow);
+  border-top: 3px solid var(--primary-cyan);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -79,7 +82,7 @@
 .access-denied button {
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background: #4f46e5;
+  background: var(--gradient-cool);
   color: white;
   border: none;
   border-radius: 6px;
@@ -96,8 +99,8 @@
   align-items: center;
   gap: 20px;
   padding: 14px 40px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  background: var(--bg-primary);
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.1);
 }
 
 .logo {
@@ -111,12 +114,12 @@
   height: 44px;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
 }
 
 .logo .brand {
   font-weight: 800;
-  color: #0b4da2;
+  color: var(--primary-cyan);
   font-size: 18px;
   letter-spacing: 0.2px;
 }
@@ -124,7 +127,7 @@
 .logo .tagline {
   font-weight: 500;
   font-size: 12px;
-  color: #666;
+  color: var(--primary-teal);
 }
 
 .nav-menu {
@@ -150,24 +153,29 @@
 }
 
 .nav-links li a:hover {
-  background: rgba(11,77,162,0.08);
-  color: #0b4da2;
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary-cyan);
 }
 
 /* active link */
 .nav-links li a.active {
-  color: #0b4da2;
+  color: var(--primary-cyan);
   font-weight: 900;
   padding-bottom: 6px;
 }
 
 .login-btn {
-  background: #0b4da2;
+  background: var(--gradient-cool);
   color: white;
   padding: 9px 20px;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: var(--gradient-blend-1);
 }
 
 /* Mobile toggle (hidden on desktop) */

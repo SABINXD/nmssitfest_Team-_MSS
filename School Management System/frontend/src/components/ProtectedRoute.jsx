@@ -16,8 +16,12 @@ const ProtectedRoute = ({ children, allowedRoles = [] }) => {
   }
 
   if (!isAuthenticated()) {
-    // Redirect to login page, saving the attempted location
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    // Redirect to correct login page based on role
+    let loginPath = '/login';
+    if (allowedRoles.includes('admin')) loginPath = '/adminlogin';
+    else if (allowedRoles.includes('teacher')) loginPath = '/teacherlogin';
+    else if (allowedRoles.includes('student')) loginPath = '/studentlogin';
+    return <Navigate to={loginPath} state={{ from: location }} replace />;
   }
 
   // Check if user has required role

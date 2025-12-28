@@ -1,0 +1,121 @@
+.features-page {
+  min-height: calc(100vh - 80px);
+  background: var(--page-bg);
+  padding: 60px 20px;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features-header h1 {
+  font-size: 42px;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.features-subtitle {
+  font-size: 20px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  border-top: 4px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.28);
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--gradient-blend-3);
+  opacity: 0.8;
+}
+
+.feature-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 24px;
+  color: var(--primary-teal);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .features-page {
+    padding: 40px 15px;
+  }
+
+  .features-header h1 {
+    font-size: 32px;
+  }
+
+  .features-subtitle {
+    font-size: 18px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 25px 20px;
+  }
+
+  .feature-icon {
+    font-size: 48px;
+  }
+
+  .feature-card h3 {
+    font-size: 20px;
+  }
+
+  .feature-card p {
+    font-size: 15px;
+  }
+}
+

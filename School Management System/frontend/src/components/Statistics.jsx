@@ -2,9 +2,8 @@ import "./Statistics.css";
 
 const stats = [
   { number: "4K+", label: "Active Students" },
+  { number: "200+", label: "Teachers" },
   { number: "50+", label: "Staffs" },
-  { number: "50K+", label: "Daily Transactions" },
-  { number: "99%", label: "Satisfaction Rate" }
 ];
 
 function Statistics() {

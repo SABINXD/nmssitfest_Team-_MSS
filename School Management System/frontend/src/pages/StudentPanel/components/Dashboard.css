@@ -24,7 +24,7 @@
   }
   
   .date-display {
-    color: #80A1BA;
+    color: #0EA5E9;
     font-weight: 600;
     font-size: 16px;
   }
@@ -49,7 +49,7 @@
   
   .stat-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(128, 161, 186, 0.2);
+    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.2);
   }
   
   .stat-icon {
@@ -59,7 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #80A1BA 0%, #6b8ba3 100%);
+    background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 100%);
     border-radius: 12px;
   }
   
@@ -106,7 +106,7 @@
     padding: 15px;
     background: #f8f9fa;
     border-radius: 8px;
-    border-left: 4px solid #80A1BA;
+    border-left: 4px solid #0EA5E9;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -171,7 +171,7 @@
   .class-time {
     min-width: 80px;
     font-weight: 600;
-    color: #80A1BA;
+    color: #0EA5E9;
     font-size: 14px;
   }
   

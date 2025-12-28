@@ -15,26 +15,15 @@ const TeacherLogin = () => {
       ...prev,
       [field]: value
     }));
-    setError('');
-  };
-
-  const getPermissionsByRole = (role) => {
-    const permissions = {
-      teacher: ['manage_classes', 'upload_materials', 'grade_students', 'generate_timetable']
-    };
-    return permissions[role] || [];
+    setError(''); // Clear error on input change
   };
 
   const handleLogin = async () => {
     const { email, password } = formData;
     
+    // Basic validation
     if (!email || !password) {
       setError('Please fill in all fields');
-      return;
-    }
-    
-    if (!email.includes('@')) {
-      setError('Please enter a valid email address');
       return;
     }
     
@@ -42,32 +31,45 @@ const TeacherLogin = () => {
     setError('');
     
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const res = await fetch('http://localhost:5000/api/teachers/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: email, // allowing username or email based on your snippet
+          email,
+          password
+        })
+      });
       
-      const userData = {
-        id: Date.now().toString(),
-        email: email,
-        name: email.split('@')[0].replace('.', ' '),
-        role: 'teacher',
-        avatar: '👨‍🏫',
-        permissions: getPermissionsByRole('teacher')
-      };
+      const data = await res.json();
       
-      login(userData);
+      if (!res.ok) {
+        throw new Error(data.error || 'Login failed');
+      }
+      
+      // Update global auth state
+      login({ ...data.teacher, role: 'teacher' });
+      
+      // Redirect to teacher dashboard
       navigate('/teacher');
       
     } catch (err) {
-      console.log(err);
-      setError('Login failed. Please check your credentials.');
+      setError(err.message || 'Login failed. Please check your credentials.');
     } finally {
       setIsLoading(false);
     }
   };
 
+  const handleForgotPassword = () => {
+    alert('Please contact the administrator to reset your teacher account password.');
+  };
+
   return (
     <div className="login-container">
       <div className="login-card">
-        <div className="login-header">
+        {/* Header */}
+        <div className="login-header teacher-header">
+          <div className="portal-icon teacher-icon">👨‍🏫</div>
           <div className="logo-section">
             <img src="/logo.png" alt="NMSS SMART Logo" className="login-logo" />
             <h1>NMSS SMART</h1>
@@ -75,6 +77,7 @@ const TeacherLogin = () => {
           <p className="login-subtitle">Teacher Portal Access</p>
         </div>
 
+        {/* Login Form */}
         <div className="login-form-container">
           <div className="login-form">
             <div className="form-header">
@@ -85,11 +88,11 @@ const TeacherLogin = () => {
             <div className="form-group">
               <label htmlFor="teacher-email">
                 <span className="label-icon">📧</span>
-                Teacher Email
+                Teacher Email / Username
               </label>
               <input
                 id="teacher-email"
-                type="email"
+                type="text"
                 placeholder="teacher@school.edu"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
@@ -114,7 +117,10 @@ const TeacherLogin = () => {
               <label className="remember-me">
                 <input type="checkbox" /> Remember me
               </label>
-              <button className="forgot-password">
+              <button 
+                className="forgot-password"
+                onClick={handleForgotPassword}
+              >
                 Forgot Password?
               </button>
             </div>
@@ -128,29 +134,38 @@ const TeacherLogin = () => {
                 <span className="spinner">⏳</span>
               ) : (
                 <>
-                  <span className="btn-icon">📚</span>
+                  <span className="btn-icon">👨‍🏫</span>
                   Sign in as Teacher
                 </>
               )}
             </button>
+          </div>
 
-            {error && (
-              <div className="error-message">
-                <span className="error-icon">❌</span>
-                {error}
-              </div>
-            )}
-
-            <div className="back-home">
-              <button className="home-btn" onClick={() => navigate('/')}>
-                ← Back to Home
-              </button>
+          {/* Error Message */}
+          {error && (
+            <div className="error-message">
+              <span className="error-icon">❌</span>
+              {error}
             </div>
+          )}
+
+          {/* Back to Home/Portal Selection */}
+          <div className="back-home">
+            <button 
+              className="home-btn"
+              onClick={() => navigate('/')}
+            >
+              ← Back to Portal Selection
+            </button>
           </div>
         </div>
 
+        {/* Footer */}
         <div className="login-footer">
-          <p>Need help? Contact support: support@nmss.edu</p>
+          <p>Need help? Contact IT Support: it-support@nmss.edu</p>
+          <p className="footer-note">
+            Secure Teacher Access - Authorized Personnel Only
+          </p>
         </div>
       </div>
     </div>
@@ -158,4 +173,3 @@ const TeacherLogin = () => {
 };
 
 export default TeacherLogin;
-

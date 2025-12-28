@@ -1,104 +1,73 @@
 /* Hero component styles */
 .hero {
-  height: 85vh;
-  background-size: cover;
-  background-position: center;
+  padding: 100px 20px;
+  background: var(--gradient-animated);
   display: flex;
   align-items: center;
-  transition: background-image 1s ease-in-out;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
 
 .hero-content {
-  margin-left: 80px;
+  max-width: 900px;
+  margin: 0 auto;
   color: white;
-  max-width: 600px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.hero-content.show {
-  opacity: 1;
-  transform: none;
-}
-
-.hero-content.align-right {
-  margin-left: auto;
-  margin-right: 80px;
-  text-align: right;
-}
-
-.hero-content.align-left {
-  /* keep original left margin */
-  margin-left: 80px;
-  text-align: left;
 }
 
 .hero-content h1 {
-  font-size: 52px;
+  font-size: 56px;
   margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.hero-content p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  line-height: 1.5;
+.hero-subtitle {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  opacity: 0.95;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  justify-content: flex-start; /* default align with left text */
-}
-
-/* Align buttons with content alignment */
-.hero-content.align-right .hero-buttons {
-  justify-content: flex-end;
-}
-
-.hero-content.align-left .hero-buttons {
-  justify-content: flex-start;
-}
-
-.primary-btn {
-  background: #0b4da2;
-  color: white;
-  border: none;
-  padding: 12px 26px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.secondary-btn {
-  background: white;
-  color: #0b4da2;
-  border: none;
-  padding: 12px 26px;
-  font-size: 16px;
-  cursor: pointer;
+.hero-description {
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .hero {
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .hero-content,
-  .hero-content.align-right,
-  .hero-content.align-left {
-    margin: 0 auto;
-    text-align: center;
-    max-width: 90%;
+    padding: 60px 20px;
   }
 
   .hero-content h1 {
-    font-size: 32px;
+    font-size: 36px;
   }
 
-  /* center buttons on small screens */
-  .hero-content .hero-buttons {
-    justify-content: center !important;
+  .hero-subtitle {
+    font-size: 22px;
+  }
+
+  .hero-description {
+    font-size: 18px;
   }
 }

@@ -45,12 +45,12 @@
   }
   
   .filter-btn:hover {
-    color: #80A1BA;
+    color: #0EA5E9;
     background: #f8f9fa;
   }
   
   .filter-btn.active {
-    background: #80A1BA;
+    background: linear-gradient(135deg, #0EA5E9, #6366F1);
     color: white;
   }
   
@@ -65,13 +65,13 @@
     border-radius: 12px;
     padding: 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border-left: 4px solid #80A1BA;
+    border-left: 4px solid #0EA5E9;
     transition: all 0.3s ease;
   }
   
   .assignment-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 16px rgba(128, 161, 186, 0.2);
+    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.2);
   }
   
   .assignment-header {
@@ -97,7 +97,7 @@
   }
   
   .subject-badge {
-    background: #80A1BA;
+    background: linear-gradient(135deg, #0EA5E9, #6366F1);
     color: white;
     padding: 4px 12px;
     border-radius: 12px;
@@ -233,12 +233,12 @@
   }
   
   .submit-btn {
-    background: #80A1BA;
+    background: linear-gradient(135deg, #0EA5E9, #6366F1);
     color: white;
   }
   
   .submit-btn:hover {
-    background: #6b8ba3;
+    background: linear-gradient(135deg, #0284c7, #4f46e5);
     transform: translateY(-2px);
   }
   
@@ -357,10 +357,10 @@
   .file-upload-label {
     display: block;
     padding: 40px;
-    border: 2px dashed #80A1BA;
+    border: 2px dashed #0EA5E9;
     border-radius: 8px;
     text-align: center;
-    color: #80A1BA;
+    color: #0EA5E9;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -369,7 +369,7 @@
   
   .file-upload-label:hover {
     background: #f0f4f8;
-    border-color: #6b8ba3;
+    border-color: #6366F1;
   }
   
   .file-hint {
@@ -387,7 +387,7 @@
   .submit-assignment-btn {
     flex: 1;
     padding: 14px;
-    background: #80A1BA;
+    background: linear-gradient(135deg, #0EA5E9, #6366F1);
     color: white;
     border: none;
     border-radius: 8px;
@@ -398,7 +398,7 @@
   }
   
   .submit-assignment-btn:hover {
-    background: #6b8ba3;
+    background: linear-gradient(135deg, #0284c7, #4f46e5);
     transform: translateY(-2px);
   }
   

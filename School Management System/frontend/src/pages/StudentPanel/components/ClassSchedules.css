@@ -45,17 +45,17 @@
   }
   
   .view-btn:hover {
-    color: #80A1BA;
+    color: #0EA5E9;
     background: #f8f9fa;
   }
   
   .view-btn.active {
-    background: #80A1BA;
+    background: linear-gradient(135deg, #0EA5E9, #6366F1);
     color: white;
   }
   
   .next-class-alert {
-    background: linear-gradient(135deg, #80A1BA 0%, #6b8ba3 100%);
+    background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 100%);
     color: white;
     padding: 20px 25px;
     border-radius: 12px;
@@ -63,7 +63,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    box-shadow: 0 4px 12px rgba(128, 161, 186, 0.3);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
   }
   
   .alert-icon {
@@ -98,11 +98,11 @@
   
   .day-column:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(128, 161, 186, 0.2);
+    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.2);
   }
   
   .day-column.today {
-    border-color: #80A1BA;
+    border-color: #0EA5E9;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   }
   
@@ -122,7 +122,7 @@
   }
   
   .today-badge {
-    background: #80A1BA;
+    background: linear-gradient(135deg, #0EA5E9, #6366F1);
     color: white;
     padding: 4px 12px;
     border-radius: 12px;
@@ -141,7 +141,7 @@
     padding: 15px;
     background: #f8f9fa;
     border-radius: 8px;
-    border-left: 4px solid #80A1BA;
+    border-left: 4px solid #0EA5E9;
     transition: all 0.3s ease;
   }
   
@@ -152,7 +152,7 @@
   
   .class-time {
     font-size: 12px;
-    color: #80A1BA;
+    color: #0EA5E9;
     font-weight: 600;
     margin-bottom: 8px;
   }
@@ -174,7 +174,7 @@
   }
   
   .room-number {
-    color: #80A1BA !important;
+    color: #0EA5E9 !important;
   }
   
   .daily-schedule {
@@ -192,7 +192,7 @@
   }
   
   .day-header-large h2 {
-    color: #80A1BA;
+    color: #0EA5E9;
     font-size: 28px;
     margin-bottom: 5px;
   }
@@ -209,7 +209,7 @@
     background: #f8f9fa;
     border-radius: 12px;
     margin-bottom: 15px;
-    border-left: 4px solid #80A1BA;
+    border-left: 4px solid #0EA5E9;
     transition: all 0.3s ease;
   }
   
@@ -220,7 +220,7 @@
   
   .time-badge {
     min-width: 120px;
-    background: #80A1BA;
+    background: linear-gradient(135deg, #0EA5E9, #6366F1);
     color: white;
     padding: 15px;
     border-radius: 8px;
@@ -278,12 +278,12 @@
   }
   
   .summary-card {
-    background: linear-gradient(135deg, #80A1BA 0%, #6b8ba3 100%);
+    background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 100%);
     color: white;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(128, 161, 186, 0.3);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
   }
   
   .summary-card h3 {

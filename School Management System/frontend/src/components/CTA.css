@@ -1,8 +1,10 @@
 .cta-section {
   padding: 80px 20px;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: var(--gradient-blend-2);
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .cta-content {
@@ -42,14 +44,16 @@
 }
 
 .cta-primary-btn {
-  background: #0b4da2;
-  color: white;
+  background: white;
+  color: var(--primary-teal);
+  font-weight: 600;
 }
 
 .cta-primary-btn:hover {
-  background: #0a3d8a;
+  background: var(--primary-yellow);
+  color: var(--primary-teal);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(11, 77, 162, 0.3);
+  box-shadow: 0 8px 16px rgba(249, 115, 22, 0.28);
 }
 
 .cta-secondary-btn {
@@ -60,7 +64,7 @@
 
 .cta-secondary-btn:hover {
   background: white;
-  color: #1a1a1a;
+  color: var(--primary-cyan);
   transform: translateY(-2px);
 }
 

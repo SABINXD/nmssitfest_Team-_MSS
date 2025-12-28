@@ -41,13 +41,13 @@
 }
 
 .admin-tab:hover {
-  color: #0b4da2;
-  background: rgba(11, 77, 162, 0.05);
+  color: #0EA5E9;
+  background: rgba(14, 165, 233, 0.05);
 }
 
 .admin-tab.active {
-  color: #0b4da2;
-  border-bottom-color: #0b4da2;
+  color: #0EA5E9;
+  border-bottom-color: #0EA5E9;
 }
 
 .admin-content {
@@ -79,7 +79,7 @@
 }
 
 .file-upload-area {
-  border: 2px dashed #0b4da2;
+  border: 2px dashed #0EA5E9;
   border-radius: 12px;
   padding: 3rem;
   text-align: center;
@@ -90,12 +90,12 @@
 
 .file-upload-area:hover {
   background: #f3f4f6;
-  border-color: #1e6fd9;
+  border-color: #6366F1;
 }
 
 .file-upload-area.drag-over {
-  background: #dbeafe;
-  border-color: #0b4da2;
+  background: #E0F2FE;
+  border-color: #0EA5E9;
 }
 
 .upload-icon {
@@ -167,7 +167,7 @@
 }
 
 .process-btn {
-  background: linear-gradient(135deg, #0b4da2 0%, #1e6fd9 100%);
+  background: linear-gradient(135deg, #0EA5E9 0%, #6366F1 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -183,7 +183,7 @@
 
 .process-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(11, 77, 162, 0.3);
+  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.3);
 }
 
 .process-btn:disabled {
@@ -213,6 +213,35 @@
   border: 1px solid #a7f3d0;
 }
 
+/* Filter/Search Controls */
+.filter-controls {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 1rem 0 1.5rem 0;
+  flex-wrap: wrap;
+}
+.filter-controls label {
+  font-weight: 500;
+  color: #0EA5E9;
+  margin-right: 0.5rem;
+}
+.filter-controls select,
+.filter-controls input[type="text"] {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+  background: #f9fafb;
+}
+.filter-controls select:focus,
+.filter-controls input[type="text"]:focus {
+  border-color: #0EA5E9;
+  background: #fff;
+}
+
 /* Credentials Section */
 .credentials-section {
   margin-top: 2rem;
@@ -223,6 +252,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .credentials-header h3 {
@@ -261,7 +291,7 @@
 }
 
 .credentials-table thead {
-  background: #0b4da2;
+  background: linear-gradient(135deg, #0EA5E9, #6366F1);
   color: white;
 }
 
@@ -285,7 +315,7 @@
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
-  color: #0b4da2;
+  color: #0EA5E9;
   font-weight: 600;
 }
 
@@ -295,7 +325,7 @@
   padding: 1.5rem;
   background: #f9fafb;
   border-radius: 8px;
-  border-left: 4px solid #0b4da2;
+  border-left: 4px solid #0EA5E9;
 }
 
 .requirements h3 {
